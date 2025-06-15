@@ -13,19 +13,12 @@ class HomeController extends Controller
 {
    public function index()
    {
-   //  $services = Submenu::where('menu_id', '3')->get();
-   //  // dd($services);
-   //  $products=Submenu::all();
-   //  // dd($products);
-   //  $contact=Contact::first();
-    // $about1 = Submenu::where('name', 'About Us')->first();
-    // $services = Submenu::where('menu_id','3')->get();
-    // $service = Menu::with(['Submenus'])->where('id','3')->first();
-    // dd($service);
-    $homeIntroList= Page::with(['Sections'])->where('name','Home')->first();
+
+
+    $homeIntroList= Page::with(['sections'])->where('name','Home')->first();
     $servicesIntro = Service::where('icon', '!=', null)->get();
     $serviceLowEsteem= Service::where('short_name', 'Low Self-Esteem ')->first();
-
+   // dd(  $homeIntroList);
 
        return view('home')->with('homeIntroList',$homeIntroList)
        ->with('servicesIntro', $servicesIntro)

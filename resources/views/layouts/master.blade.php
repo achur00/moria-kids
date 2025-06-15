@@ -1,510 +1,465 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
-<meta charset="utf-8">
-<title>@yield('title')</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('meta_description')">
+    <meta name="keywords" content="@yield('meta_keywords')">
+    <meta name="author" content="arkuzcreo">
 
-<!-- Stylesheets -->
-<link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+     <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Moriah Care Services | Safe, Therapeutic Homes for Children">
+  <meta property="og:description" content="Dedicated to transforming young lives through trauma-informed care, emotional support, and secure residential environments.">
+  <meta property="og:image" content="https://www.moriahcare.com/assets/img/moriah-logo.png">
+  <meta property="og:url" content="https://www.moriahcare.com/">
+  <meta property="og:type" content="website">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-<link rel="shortcut icon" href="{{ asset('assets/images/el-favicon.jpg') }}" type="image/x-icon">
-<link rel="icon" href="{{ asset('assets/images/el-favicon.jpg') }}" type="image/x-icon">
-
-<!-- line awesome -->
-<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moriah Care Services | Safe, Therapeutic Homes for Children">
+  <meta name="twitter:description" content="Supporting vulnerable children with structured care, therapy, and emotional stability in residential homes across the UK.">
+  <meta name="twitter:image" content="https://www.moriahcare.com/assets/img/moriah-logo.png">
 
 
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="robots" content="INDEX,FOLLOW">
 
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="{{ asset('js/respond.js') }}"></script><![endif]-->
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="{{ asset('assets/img/moriah-favicon2.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/img/moriah-favicon2.png') }}" type="image/x-icon">
+
+    <!--==============================
+        All CSS File
+    ============================== -->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
 </head>
 
 <body>
 
-<div class="page-wrapper">
 
-    <!-- Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    <!-- Cursor End -->
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
 
-    <!-- Preloader -->
+    <!--************* Code Start From Here ************* -->
+
+    <!--========== Preloader =========-->
     <!-- <div class="preloader">
-        <div class="box"></div>
+        <button class="vs-btn wave-btn preloaderCls">Cancel Preloader </button>
+        <div class="preloader-inner">
+            <svg id="preloader" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+                <path id="Path_1" data-name="Path 1" d="M64,0,40.08,21.9a10.98,10.98,0,0,0-5.05,8.75C34.37,44.85,64,60.63,64,60.63Z" fill="#ffb118" />
+                <path id="Path_2" data-name="Path 2" d="M128,64,106.12,40.1a10.97,10.97,0,0,0-8.75-5.05C83.17,34.4,67.4,64,67.4,64Z" fill="#80c141" />
+                <path id="Path_3" data-name="Path 3" d="M63.7,69.73a110.97,110.97,0,0,1-5.04-20.54c-1.16-8.7.68-14.17.68-14.17H97.37s-4.3-.86-14.47,10.1C79.84,48.42,63.7,69.7,63.7,69.7Z" fill="#cadc28" />
+                <path id="Path_4" data-name="Path 4" d="M64,128l23.9-21.88a10.97,10.97,0,0,0,5.05-8.75C93.6,83.17,64,67.4,64,67.4Z" fill="#cf171f" />
+                <path id="Path_5" data-name="Path 5" d="M58.27,63.7a110.97,110.97,0,0,1,20.54-5.04c8.7-1.16,14.17.68,14.17.68V97.37s.86-4.3-10.1-14.47C79.58,79.84,58.3,63.7,58.3,63.7Z" fill="#ec1b21" />
+                <path id="Path_6" data-name="Path 6" d="M0,64,21.88,87.9a10.97,10.97,0,0,0,8.75,5.05C44.83,93.6,60.6,64,60.6,64Z" fill="#018ed5" />
+                <path id="Path_7" data-name="Path 7" d="M64.3,58.27a110.97,110.97,0,0,1,5.04,20.54c1.16,8.7-.68,14.17-.68,14.17H30.63s4.3.86,14.47-10.1c3.06-3.3,19.2-24.58,19.2-24.58Z" fill="#00bbf2" />
+                <path id="Path_8" data-name="Path 8" d="M69.73,64.34a111.023,111.023,0,0,1-20.55,5.05c-8.7,1.14-14.15-.7-14.15-.7V30.65s-.86,4.3,10.1,14.5c3.3,3.05,24.6,19.2,24.6,19.2Z" fill="#f8f400" />
+                <circle id="Ellipse_1" data-name="Ellipse 1" cx="2.03" cy="2.03" r="2.03" transform="translate(61.97 61.97)" />
+            </svg>
+        </div>
     </div> -->
 
-    <!-- Main Header / Header Style Two -->
-    <header class="main-header header-style-two">
+    <div class="popup-search-box d-none d-lg-block  ">
+        <button class="searchClose border-theme text-theme"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" class="border-theme" placeholder="What are you looking for">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div>
 
-        <!-- Header Lower -->
-        <div class="header-lower">
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+    <!--vs-mobile-menu start-->
+    <div class="vs-menu-wrapper">
+        <div class="vs-menu-area">
+            <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="{{ url('/') }}"><img src="{{ asset('assets/img/moriah-logo.png') }}" alt="Moriah Care"></a>
+            </div>
+            <div class="vs-mobile-menu">
+                <ul>
+                    @foreach($allMenus as $menu)
+                        <li class="{{ $menu->has_children ? 'menu-item-has-children' : '' }}">
+                            <a href="{{ url($menu->url) }}">{{ ucfirst($menu->name) }}</a>
+                        @if($menu->submenu->count() > 0)
+                            @foreach($menu->submenu as $submenu)
+                            <ul class="sub-menu">
+                            <!-- service as submenu -->
+                            @if($submenu->services->count() > 0)
+                                @foreach($submenu->services as $service)
+                                <li><a href="{{ url('/') }}">{{$service->name}}</a></li>
+                                @endforeach
+                            @endif
+                            <ul>
+                            @endforeach
+                        @endif      
+                        </li>
+                    @endforeach
+                    <!-- <li class="menu-item-has-children">
+                        <a href="{{ url('/') }}">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('/') }}">Home One</a></li>
+                            <li><a href="{{ url('index-2') }}">Home Two</a></li>
+                            <li><a href="{{ url('index-3') }}">Home Three</a></li>
+                            <li><a href="{{ url('index-4') }}">Home Four</a></li>
+                            <li><a href="{{ url('index-5') }}">Home Five</a></li>
+                        </ul>
+                    </li> -->
+                   <!-- <li class="menu-item-has-children">
+                        <a href="#">Classes</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('classes') }}">Classes</a></li>
+                            <li><a href="{{ url('class-details') }}">Class Details</a></li>
+                        </ul>
+                    </li> -->
+                      <!--<li><a href="{{ url('about') }}">About</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('event') }}">Event</a></li>
+                            <li><a href="{{ url('event-details') }}">Event Details</a></li>
+                            <li><a href="{{ url('gallery') }}">Gallery</a></li>
+                            <li><a href="{{ url('team-details') }}">Team Details</a></li>
+                            <li><a href="{{ url('service') }}">Services</a></li>
+                            <li><a href="{{ url('service-details') }}">Services Details</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
+                            <li><a href="{{ url('shop-with-sidebar') }}">Shop Sidebar</a></li>
+                            <li><a href="{{ url('shop-details') }}">Shop Details</a></li>
+                            <li><a href="{{ url('cart') }}">Shopping Cart</a></li>
+                            <li><a href="{{ url('checkout') }}">Checkout</a></li>
+                            <li><a href="{{ url('wishlist') }}">Wishlist</a></li>
+                            <li><a href="{{ url('error') }}">Error Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('blog') }}">Blog</a></li>
+                            <li><a href="{{ url('blog-details') }}">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url('contact') }}">Contact</a>
+                    </li> -->
+                </ul>
+            </div><!-- Menu Will Append With Javascript -->
+        </div>
+    </div>
+    <!--vs-mobile-menu end-->
 
-                        <!-- Logo Box -->
-                        <div class="header-lower">
-                            <div class="auto-container">
-                                <div class="inner-container">
-                                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+    <!--======== Header ========-->
+    <header class="vs-header">
+        <!--header-top-wrapper start-->
+        <div class="header-top-area d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <div class="header-notice">
+                            <span class="date"><span class="day">
+                                @php
+                                   echo  date('d');
+                                @endphp
+                            </span><span class="month">
+                                @php
+                                   echo  date('M')."<BR>". date('Y');
+                                @endphp
 
-                                          <!-- Logo Box -->
-                                          <div class="logo-box" style="width: clamp(150px, 50%, 200px);
-                                          margin: 0;
-                                          padding: 10px 0 10px 10px;
-                                          float: left;">
-                  <a href="{{ url('/') }}" style="display: block;">
-                      <img src="{{ asset('assets/images/el_roi-logo.png') }}"
-                           alt="Company Logo"
-                           title="Home"
-                           style="width: 150%;
-                                  height: auto;
-                                  max-width: 120%;
-                                  min-width: 100px;">
-                  </a>
+                            </span></span><span class="notice"> Transforming Young Lives with Safe Homes, Healing Care, and a Future Full of Possibility.</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="header-social">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <!-- <li><a href="#"><i class="fab fa-skype"></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                        <!-- End Logo Box -->
-
-                        <!-- Nav Outer -->
-                        <div class="nav-outer d-flex align-items-center flex-wrap">
-                            <!-- Main Menu -->
-                            <nav class="main-menu navbar-expand-md">
-                                <div class="navbar-header">
-                                    <!-- Toggle Button -->
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-
-                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        @foreach ($menus as $menu)
-                                        <li class="{{$menu->type}}"><a href="{{ $menu->url}}">{{ $menu->name }}</a>
-                                            @if($menu->Submenus->count() > 0)
-                                                <ul>
-
-                                                    @foreach ($menu->submenus->sortBy('order', SORT_ASC) as $submenu)
-                                                    @if($submenu->name =='Our People')
-                                                    <li><a href="{{ url("$submenu->url") }}">{{ $submenu->name }}</a></li>
-
-                                                   @elseif($submenu->name !=='Our People')
-                                                    <li><a href="{{ url("$submenu->url/$submenu->id") }}">{{ $submenu->name }}</a></li>
-                                                    @endif
-                                                @endforeach
-                                                </ul>
-                                            @endif
-                                        </li>
-
+            </div>
+        </div>
+        <!--header-top-wrapper end-->
+        <!--vs-main-menu-wrapper start-->
+            <div class="sticky-wrapper">
+                <div class="sticky-active">
+                <div class="header-menu-area">
+                    <div class="container">
+                    <div class="row gx-20 align-items-center justify-content-between">
+                        <div class="col-auto">
+                        <div class="header-logo">
+                            <a href="{{ url('/') }}">
+                            <img src="{{ asset('assets/img/moriah-logo.png') }}" alt="Moriah Care">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="col-auto">
+                        <nav class="main-menu d-none d-lg-inline-block">
+                            <ul>
+                    @foreach($allMenus as $menu)
+                        <li class="{{ $menu->has_children ? 'menu-item-has-children' : '' }}">
+                            <a href="{{ url($menu->url) }}">{{ ucfirst($menu->name) }}</a>
+                        @if($menu->submenu->count() > 0)
+                            @foreach($menu->submenu as $submenu)
+                            <ul class="sub-menu">
+                                <!-- service as submenu -->
+                                @if($submenu->services->count() > 0)
+                                    @foreach($submenu->services as $service)
+                                    <li><a href="{{ url('/') }}">{{$service->name}}</a></li>
                                     @endforeach
+                                @endif
+                            </ul>
+                            @endforeach
+                        @endif      
+                        </li>
+                    @endforeach
+                            <!-- <li class="menu-item-has-children">
+                                <a href="#">Classes</a>
+                                <ul class="sub-menu">
+                                <li><a href="{{ url('classes') }}">Classes</a></li>
+                                <li><a href="{{ url('class-details') }}">Class Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url('about') }}">About</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                <li class="menu-item-has-children">
+                                    <a href="{{ url('shop') }}">Shop</a>
+                                    <ul class="sub-menu">
+                                    <li><a href="{{ url('shop') }}">Shop</a></li>
+                                    <li><a href="{{ url('shop-with-sidebar') }}">Shop Sidebar</a></li>
+                                    <li><a href="{{ url('shop-details') }}">Shop Details</a></li>
+                                    <li><a href="{{ url('cart') }}">Shopping Cart</a></li>
+                                    <li><a href="{{ url('checkout') }}">Checkout</a></li>
+                                    <li><a href="{{ url('wishlist') }}">Wishlist</a></li>
                                     </ul>
-                                </div>
-                            </nav>
+                                </li>
+                                <li><a href="{{ url('event') }}">Event</a></li>
+                                <li><a href="{{ url('event-details') }}">Event Details</a></li>
+                                <li><a href="{{ url('gallery') }}">Gallery</a></li>
+                                <li><a href="{{ url('team-details') }}">Team Details</a></li>
+                                <li><a href="{{ url('service') }}">Services</a></li>
+                                <li><a href="{{ url('service-details') }}">Services Details</a></li>
+                                <li><a href="{{ url('error') }}">Error Page</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                <li><a href="{{ url('blog') }}">Blog</a></li>
+                                <li><a href="{{ url('blog-details') }}">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ url('contact') }}">Contact</a>
+                            </li> -->
+                            </ul>
+                        </nav>
+                        <button type="button" class="vs-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i> Menu</button>
                         </div>
-                        <!-- End Nav Outer -->
-
-                        <!-- Outer Box -->
-                        <div class="outer-box d-flex align-items-center flex-wrap">
-
-                            <!-- Header Options Box -->
-                            <div class="header-options_box d-flex align-items-center">
-
-                                <!-- Search Btn -->
-                                <div class="search-box-btn search-box-outer"><span class="icon"><img src="{{ asset('assets/images/icons/search-light.svg') }}" alt="" /></span></div>
-
-                                <!-- Nav Btn -->
-                                <div class="nav-btn navSidebar-button">
-                                    <i class="flaticon-dots-menu"></i>
-                                </div>
-
-                            </div>
-
-                            <!-- Header Button Box -->
-                            <div class="header_button-box">
-                                <a href="{{ url('/#quote') }}" class="theme-btn btn-style-one">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">Get a Quotes</span>
-                                        <span class="text-two">Get a Quotes</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <!-- Mobile Navigation Toggler -->
-                            <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+                        <div class="col-auto d-none d-xl-block">
+                        <div class="header-button d-xl-flex align-items-center">
+                            <a href="{{ url('contact') }}" class="vs-btn wave-btn">Book a visit</a>
+                            <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
+                            <!-- <a href="{{ url('cart') }}" class="icon-btn"><i class="fal fa-shopping-cart"></i></a> -->
                         </div>
-                        <!-- End Outer Box -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!--vs-main-menu-wrapper end-->
+            </header>
+            <!--======== / Header ========-->
 
+            <!--======== Hero Section ========-->
+            <section class="vs-hero-wrapper hero-3 position-relative">
+            <div class="section-after style-2 d-none d-md-block">
+                <img src="{{ asset('assets/img/shape/hero3-after.png') }}" alt="shape">
+            </div>
+            <div class="hero-slider3 vs-carousel" data-slide-show="1" data-md-slide-show="1" data-arrows="true" data-fade="true">
+                <!-- Single Slide -->
+                <div class="vs-hero-inner">
+                <div class="vs-hero-bg" data-bg-src="{{ asset('assets/img/bg/three-girls-are-joyfully-holding-hands-and-spinnin-2025-04-03-04-59-35-utc.jpg') }}"></div>
+                <div class="hero-content3">
+                    <span class="h4 hero-subtitle style-3" data-ani="slideinup" data-ani-delay="0s">Homes where children can heal</span>
+                    <h2 class="hero-title style-2" data-ani="slideinup" data-ani-delay="0.2s">Helping children feel safe again.</h2>
+                    <a href="{{ url('contact') }}" class="vs-btn wave-btn" data-ani="slideinup" data-ani-delay="0.4s">Book a visit</a>
+                </div>
+                </div>
+                <!-- Single Slide -->
+                <div class="vs-hero-inner">
+                <div class="vs-hero-bg" data-bg-src="{{ asset('assets/img/bg/side-view-of-beautiful-little-multiethnic-kids-pla-2024-11-17-15-41-45-utc.jpg') }}"></div>
+                <div class="hero-content3">
+                    <span class="h4 hero-subtitle style-3" data-ani="slideinup" data-ani-delay="0s">Healing homes for young lives   </span>
+                    <h2 class="hero-title style-2" data-ani="slideinup" data-ani-delay="0.2s">Care that rebuilds young futures.</h2>
+                    <a href="{{ url('contact') }}" class="vs-btn wave-btn" data-ani="slideinup" data-ani-delay="0.4s">Book a visit</a>
+                </div>
+                </div>
+                <!-- Single Slide -->
+                <div class="vs-hero-inner">
+                <div class="vs-hero-bg" data-bg-src="{{ asset('assets/img/bg/elementary-school-kids-running-together-in-an-open-2024-10-19-21-51-34-utc.jpg') }}"></div>
+                <div class="hero-content3">
+                    <span class="h4 hero-subtitle style-3" data-ani="slideinup" data-ani-delay="0s">Empowering young people in care</span>
+                    <h2 class="hero-title style-2" data-ani="slideinup" data-ani-delay="0.2s">Therapeutic care that transforms lives.</h2>
+                    <a href="{{ url('contact') }}" class="vs-btn wave-btn" data-ani="slideinup" data-ani-delay="0.4s">Book a visit</a>
+                </div>
+                </div>
+            </div> <!-- / Slider end -->
+            <div class="shape-mockup rotate d-none d-md-block" data-top="10%" data-left="11%"><img src="{{ asset('assets/img/icon/sun-4.png') }}" alt="shapes"></div>
+            <div class="shape-mockup movingBottomLeft" data-bottom="20%" data-left="0%"><img src="{{ asset('assets/img/icon/car-5.png') }}" alt="shapes"></div>
+            <div class="shape-mockup movingTopLeft d-none d-md-block" data-bottom="3%" data-right="3%"><img src="{{ asset('assets/img/icon/rain-2.png') }}" alt="shapes"></div>
+            <div class="shape-mockup moving d-none d-xl-block" data-top="9%" data-right="8%"><img src="{{ asset('assets/img/icon/m.png') }}" alt="shapes"></div>
+            </section>
+            <!--======== / Hero Section ========-->
+
+            @yield('content')
+
+                           <!--==============================
+                Footer Area
+                ==============================-->
+                <footer class="footer-wrapper footer-layout2">
+                    <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
+                    <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
+        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="assets/img/icon/car-4.png" alt="shapes"></div>
+        <div class="widget-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <!-- About Widget-->
+                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="widget footer-widget">
+                            <div class="vs-widget-about">
+                                <div class="about-logo">
+                                    <a href="index.html">
+                                        <img src="assets/img/moriah-logo.png" alt="Moriah-care">
+                                    </a>
+                                </div>
+                                <p class="about-text">Transforming Young Lives with Safe Homes, Healing Care, and a Future Full of Possibility.</p>
+                                <div class="multi-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget-->
+                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="widget footer-widget widget_nav_menu">
+                            <h4 class="widget_title">Menu</h4>
+                            <ul class="menu">
+                                @foreach($allMenus as $menu)
+                                    <li><a href="{{ url($menu->url) }}">{{ ucfirst($menu->name) }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Footer Widget -->
+                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="widget footer-widget">
+                            <h4 class="widget_title">News Feed</h4>
+                            <div class="recent-post-wrap">
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-1.jpg" alt="Blog Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2024</a></div>
+                                        <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story Guide Yes</a></h4>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-2.jpg" alt="Blog Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2024</a></div>
+                                        <h4 class="post-title"><a href="blog-details.html">How to prepare child for examination</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget -->
+                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="widget footer-widget">
+                            <h3 class="widget_title">Contact Us</h3>
+                            <div class="vs-widget-contact">
+                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave, Brooklyn CA, United State</p>
+                                <p class="footer-info"><i class="fas fa-envelope"></i><a href="mailto:info@Moriah Careteam.com">info@Moriah Careteam.com</a></p>
+                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Header Lower -->
+        <div class="footer-copyright">
+            <div class="container">
 
-        <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><span class="icon flaticon-close-1"></span></div>
-
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="{{ url('/') }}"><img src="{{ asset('assets/images/el_roi-logo.png') }}" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
-            </nav>
-        </div>
-        <!-- End Mobile Menu -->
-
-    </header>
-    <!-- End Main Header -->
-
-    <!-- Banner Two -->
-    <section class="banner-two">
-        {{-- <div class="banner-two_info">
-            <a href="mailto:{{$contact->email}}">{{$contact->email}}</a>
-            <span><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></span>
-        </div> --}}
-        <div class="banner-two_socials mt-5">
-            <a  class="fa-brands fa-fw" href="mailto:{{$contact->email}}"><i class="fa-solid fa-envelope"></i></a>
-            <a  class="fa-brands fa-fw" href="tel:{{$contact->phone}}"><i class="fa-solid fa-phone"></i></a>
-            <a class="fa-brands fa-facebook-f fa-fw" href="#"></a>
-            <a class="fa-brands fa-instagram fa-fw" href="#"></a>
-            <a class="fa-brands fa-twitter fa-fw" href="#"></a>
-            <a class="fa-brands fa-youtube fa-fw" href="#"></a>
-        </div>
-
-        <!-- Video and Content Wrapper -->
-        <div class="banner-two_video-wrapper" style="position: relative; width: 100%; height: auto;">
-            <video autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover;">
-                <source src="{{ asset('assets/videos/combined-lincense.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <!-- Content Column -->
-            <div class="banner-two_content" style="position: absolute; top: 50%; left: 5%; transform: translateY(-50%); z-index: 2; text-align: left;">
-                <div class="banner-two_content-inner">
-                    <div class="banner-two_title" style="background-color: #e0f7fa; color: #006064; padding: 15px; border-radius: 8px; animation: fadeInDown 3s ease-in-out infinite alternate;">
-                        <span class="content-switcher" data-content="Discover Your Dream Space|Unleash Your Imagination|Create Timeless Memories">
-                            Discover Your Dream Space
-                        </span>
-                    </div>
-                    <div class="content-columns">
-                        <div class="banner-two_column" style="display: none;">
-                            <h1 class="banner-two_heading" style="font-size: clamp(24px, 5vw, 60px); animation: zoomInOut 6s ease-in-out infinite;">
-                                <span style="background-color: #e0f7fa; color: #006064; padding: 10px; border-radius: 8px;">
-                                    <span class="m-1">Experience Luxury</span>
-                                    <span class="text-dark p-1"><br>Embrace Comfort</span>
-                                </span>
-                            </h1>
-                            <div class="banner-two_text" style="background-color: #e0f7fa; color: #006064; padding: 10px; border-radius: 8px; animation: fadeInUpOut 6s ease-in-out infinite;">
-                                Transforming Spaces—Crafting Memories That Last Forever.
-                            </div>
-                        </div>
-                        <div class="banner-two_column" style="display: none;">
-                            <h1 class="banner-two_heading" style="font-size: clamp(24px, 5vw, 60px); animation: zoomInOut 6s ease-in-out infinite;">
-                                <span style="background-color: #e0f7fa; color: #006064; padding: 15px; border-radius: 8px;">
-                                    <span class="m-1">Innovative Designs</span>
-                                    <span class="text-dark p-1"><br>Tailored for You</span>
-                                </span>
-                            </h1>
-                            <div class="banner-two_text" style="background-color: #e0f7fa; color: #006064; padding: 15px; border-radius: 8px; animation: fadeInUpOut 6s ease-in-out infinite;">
-                                Redefining Spaces with Creativity and Precision.
-                            </div>
-                        </div>
-                        <div class="banner-two_column" style="display: none;">
-                            <h1 class="banner-two_heading" style="font-size: clamp(24px, 5vw, 60px); animation: zoomInOut 6s ease-in-out infinite;">
-                                <span style="background-color: #e0f7fa; color: #006064; padding: 10px; border-radius: 8px;">
-                                    <span class="m-1">Timeless Elegance</span>
-                                    <span class="text-dark p-1"><br>Unmatched Quality</span>
-                                </span>
-                            </h1>
-                            <div class="banner-two_text" style="background-color: #e0f7fa; color: #006064; padding: 10px; border-radius: 8px; animation: fadeInUpOut 6s ease-in-out infinite;">
-                                Crafting Spaces That Inspire and Delight.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const columns = document.querySelectorAll('.banner-two_column');
-                    let currentIndex = 0;
-
-                    function showColumn(index) {
-                        columns.forEach((column, i) => {
-                            column.style.display = i === index ? 'block' : 'none';
-                        });
-                    }
-
-                    showColumn(currentIndex);
-
-                    setInterval(() => {
-                        currentIndex = (currentIndex + 1) % columns.length;
-                        showColumn(currentIndex);
-                    }, 6000); // Switch every 6 seconds
-                });
-            </script>
-        </div>
-
-        <style>
-            @keyframes fadeInDown {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes zoomInOut {
-                0%, 100% {
-                    opacity: 0;
-                    transform: scale(0.8);
-                }
-                50% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-
-            @keyframes fadeInUpOut {
-                0% {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                50% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                100% {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-            }
-
-            @media (max-width: 768px) {
-                .banner-two_column h1,
-                .banner-two_column .banner-two_text {
-                    margin-bottom: 10px;
-                }
-
-                .banner-two_column span {
-                    padding: 8px;
-                }
-            }
-        </style>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const switcher = document.querySelector('.content-switcher');
-                if (switcher) {
-                    const contents = switcher.dataset.content.split('|');
-                    let index = 0;
-
-                    setInterval(() => {
-                        index = (index + 1) % contents.length;
-                        switcher.textContent = contents[index];
-                    }, 6000); // Switch every 6 seconds
-                }
-            });
-        </script>
-    </section>
-    <!-- End Banner Two -->
-
-
-
-    @yield('content')
-
-
-
-
-     <!-- Main Footer -->
-     <footer class="main-footer style-two">
-        <div class="main-footer_pattern" style="background-image: url({{ asset('assets/images/background/footer-1.png') }})"></div>
-        <!-- Widgets Section -->
-        <div class="widgets-section">
-            <div class="auto-container">
-                <div class="row clearfix">
-
-                    <!-- Big Column -->
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="row clearfix">
-
-                            <!-- Footer Column -->
-                            <div class="footer_column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget">
-                                    <div class="footer-logo"><a href="{{ url('/') }}"><img src="{{ asset('assets/images/el_roi-logo2.png') }}" alt="" title="" style="width: 70%; height:auto;"></a></div>
-                                    {{-- <div class="footer-text">Lorem ipsum dolor sit amet consecte adipiscing elit Ut et massa mi. Aliquam  hendrerit urna.</div> --}}
-                                    <div class="footer-location">
-                                        <div class="footer-location_inner">
-                                            <i class="flaticon-maps-and-flags"></i> {{$contact->address}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Footer Column -->
-                            <div class="footer_column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
-                                    <h5 class="footer-title">About Company</h5>
-                                    <ul class="footer-list">
-                                        @foreach ($about->Sections as $about)
-                                        <li><a href="{{ url('about#'.$about->url) }}">{{$about->name}}</a></li>
-                                        @endforeach
-                                        {{-- <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
-                                        <li><a href="{{ url('pricing-plan') }}">Pricing Plan</a></li>
-                                        <li><a href="{{ url('services') }}">Our Services</a></li>
-                                        <li><a href="{{ url('contact') }}">Contact</a></li>
-                                        <li><a href="{{ url('careers') }}">Careers</a></li>
-                                        <li><a href="{{ url('faqs') }}">FAQS</a></li> --}}
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Big Column -->
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="row clearfix">
-
-                            <!-- Footer Column -->
-                            <div class="footer_column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
-                                    <h5 class="footer-title">
-                                      {{$service->name}}
-                                    </h5>
-                                    <ul class="footer-list">
-                                        @foreach ( $service->Submenus as $service )
-                                        <li><a href="{{ url('service/'.$service->id ) }}">{{$service->name    }}</a></li>
-                                        @endforeach
-
-                                        {{-- <li><a href="{{ url('city/los-angeles') }}">Los Angeles</a></li>
-                                        <li><a href="{{ url('city/new-jersey') }}">New Jersey</a></li>
-                                        <li><a href="{{ url('city/russia') }}">Russia</a></li>
-                                        <li><a href="{{ url('city/south-africa') }}">South Africa</a></li>
-                                        <li><a href="{{ url('city/canada') }}">Canada</a></li>
-                                        <li><a href="{{ url('city/germany') }}">Germany</a></li> --}}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Footer Column -->
-                            <div class="footer_column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget subscribe-widget">
-                                    <h5 class="footer-title">Subscribe Now!</h5>
-                                    <!-- Newsletter Box -->
-                                    <div class="newsletter-box">
-                                        <form method="post" action="{{ url('subscribe') }}">
-                                            <div class="form-group">
-                                                <input type="email" name="search-field" value="" placeholder="Your Email" required>
-                                                <button type="submit"><i class="flaticon-bell"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <!-- Social Box -->
-                                    <div class="footer_socials">
-                                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-                                        <a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-                                        <a href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
+                <p class="copyright">&copy; Copyright @php echo date('Y') @endphp Moriah Care Service. <br>Designed by <a href="https://www.arkuzzcreo.com">Arkuzcreo</a>.</p>
             </div>
         </div>
-        <!-- End Widgets Section -->
+    </footer>
 
-		<!-- Footer Bottom -->
-		<div class="footer-bottom centered">
-			<div class="auto-container">
-				<div class="copyright">Copyright &copy; 2025 @php date('Y')==2025?$till=' ':$till='- '.date('Y');
-                 echo $till;
-                    @endphp <a href="#">El-Roi</a> All Rights Reserved<br> Designed by <a href='https://arkuzcreo.com'>ArkuzCreo</a></div>
-			</div>
-		</div>
+    <!--********************************
+			Code End  Here 
+	******************************** -->
 
-	</footer>
-	<!-- End Main Footer -->
 
-	<!-- Search Popup -->
-	<div class="search-popup">
-		<div class="color-layer"></div>
-		<button class="close-search"><span class="flaticon-close"></span></button>
-		<form method="post" action="blog.html">
-			<div class="form-group">
-				<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-				<button class="fa fa-solid fa-magnifying-glass fa-fw" type="submit"></button>
-			</div>
-		</form>
-	</div>
-	<!-- End Search Popup -->
+    <!-- Scroll To Top -->
+    <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+    <!--==============================
+        All Js File
+    ============================== -->
+    <!-- Jquery -->
+    <script src="{{ asset('assets/js/jquery-3.5.0.min.js') }}"></script>
+    <!-- Slick Slider -->
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- Magnific Popup -->
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- Isotope Filter -->
+    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <!-- Counter up  -->
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <!-- Parallax  -->
+    <script src="{{ asset('assets/js/parallax.min.js') }}"></script>
+    <!-- Custom Carousel -->
+    <script src="{{ asset('assets/js/vscustom-carousel.min.js') }}"></script>
+    <!-- Range Slider -->
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <!-- WOW JS (Animation JS) -->
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <!-- Form Js -->
+    <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
+    <!-- Main Js File -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
-	<!-- Sidebar Cart Item -->
-    @include('include.sidebar_cart')
-
-</div>
-<!-- End PageWrapper -->
-
-<div class="progress-wrap">
-	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-	</svg>
-</div>
-
-<script src="{{asset('assets/js/jquery.js')}}"></script>
-<script src="{{asset('assets/js/popper.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/js/appear.js')}}"></script>
-<script src="{{asset('assets/js/parallax.min.js')}}"></script>
-<script src="{{asset('assets/js/tilt.jquery.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.paroller.min.js')}}"></script>
-<script src="{{asset('assets/js/wow.js')}}"></script>
-<script src="{{asset('assets/js/swiper.min.js')}}"></script>
-<script src="{{asset('assets/js/backtotop.js')}}"></script>
-<script src="{{asset('assets/js/odometer.js')}}"></script>
-<script src="{{asset('assets/js/parallax-scroll.js')}}"></script>
-
-<script src="{{asset('assets/js/gsap.min.js')}}"></script>
-<script src="{{asset('assets/js/SplitText.min.js')}}"></script>
-<script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
-<script src="{{ asset('assets/js/ScrollToPlugin.min.js') }}"></script>
-<script src="{{ asset('assets/js/ScrollSmoother.min.js') }}"></script>
-
-<script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.meanmenu.min.js') }}"></script>
-<script src="{{ asset('assets/js/nav-tool.js') }}"></script>
-<script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.countdown.js') }}"></script>
-<script src="{{ asset('assets/js/element-in-view.js') }}"></script>
-<script src="{{ asset('assets/js/script.js') }}"></script>
-{{-- recapcha --}}
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-    document.getElementById("my-form").addEventListener("submit", function(event) {
-        var recaptchaValue = document.getElementById("g-recaptcha-response").value;
-        if (recaptchaValue === "") {
-            event.preventDefault(); // Prevent submission
-            alert("Please complete the reCAPTCHA");
-        }
-    });
-    </script>
 </body>
+
 </html>

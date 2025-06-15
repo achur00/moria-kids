@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('submenus', function (Blueprint $table) {
+            $table->string('url')->nullable()->change();
+            $table->string('name')->nullable()->change();
+            $table->string('order')->nullable()->change();
+        });
+            
     }
 
     /**
