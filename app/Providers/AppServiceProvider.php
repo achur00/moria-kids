@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Submenu;
 // use App\Models\Section;
 use App\Models\Contact;
+use App\Models\Event;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
@@ -51,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
 
     View::share('allMenus', Menu::with(['submenu'])->get());
     View::share('contact', Contact::first());
+    View::share('events', Event::all());
 
     // });
 }

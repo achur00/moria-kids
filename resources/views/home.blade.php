@@ -315,8 +315,9 @@
                             </div>
                         </div>
                     </div>
-
-                            <p class="event-more">To Check Out All The School Events <a class="link-btn" href="{{ url('event') }}">Click Here <i class="far fa-angle-right"></i></a></p>
+                        @if($events->count() > 0)
+                            <p class="event-more">To Check Out All Our Events <a class="link-btn" href="{{ url('event') }}">Click Here <i class="far fa-angle-right"></i></a></p>
+                        @endif
                         </div>
                         <div class="shape-mockup d-none d-hd-block" data-top="17%" data-left="4%"><img src="{{ asset('assets/img/icon/girl-1.png') }}" alt="shapes"></div>
                         <div class="shape-mockup rotate d-none d-hd-block" data-bottom="16%" data-left="6%"><img src="{{ asset('assets/img/icon/star-7.png') }}" alt="shapes"></div>
