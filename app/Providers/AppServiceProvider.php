@@ -7,8 +7,10 @@ use App\Models\Menu;
 use App\Models\Page;
 use App\Models\Submenu;
 // use App\Models\Section;
-// use App\Models\Contact;
-use App\Models\MenuHelper;
+use App\Models\Contact;
+
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\View;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -26,52 +28,31 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
 {
-    view()->composer(['layouts.master','layouts.vice_master','service_details','include.mgmt_highlight','contact',  'home'], function ($view) {
-        // $id = request()->route('id'); // Get ID from the route
-        // $service = null;
-        // $serviceNewsletter = null; // Initialize to prevent errors
 
-        // if ($id !== null) { // Only set when the route is service-related
-        //     $service = Submenu::find($id);
-        //     if ($service) {
-        //         $serviceNewsletter = $service->Sections->where('type', 'Newsletter')->first();
-        //     }
-        // }
 
-        // // Set the service based on the route path
-        // if (request()->path() == 'our-people') {
-        //     $service = Submenu::find(10);
-        // }
-        // elseif (request()->path() == 'about') {
-        //     $service = Submenu::find(11);
-        // }
-        // elseif (request()->path() == 'contact') {
-        //     $service = Submenu::find(12);
-        // }
 
-        // // profile
-        // $mgmtProfiles=Section::with('Submenus')->where('type','Profile')->get();
-        // // dd( $service);    
 
-        // // foot
-        // $aboutFooter = Submenu::where('name', 'About Us')->first();
-        // $serviceFooter = Menu::with(['Submenus'])->where('id','3')->first();
-        // $contact =Contact::first();
-
-        // dd(Menu::with(['Submenus'])->get());
-        $allMenus= Menu::with(['submenu'])->get();
-        // Assigns the constant value MENU_HAS_CHILDREN from the MenuHelper class to the $menuHasChildren variable.
-        // This is typically used to check or represent if a menu item has child items.
-        // $menuHasChildren = MenuHelper::MENU_HAS_CHILDREN;
-        $aboutIntro = Page::where('name', 'home')->first();
+    
         
+    View::composer(['layouts.vice_master'], function ($view) {
+    $page = null;
 
-        // dd($allMenus);   
-        $view->with('allMenus', $allMenus)
-        // ->with('hasChildren',$menuHasChildren )
-        ->with('aboutIntro', $aboutIntro);
-        ;
-    });
+    if (Str::is('service*', request()->path())) {
+        $page = Page::where('name', 'services')->first();
+    } elseif (request()->path() === 'contact') {
+        $page = Page::where('name', 'contact')->first(); // Fix: Specify the correct page name
+    }elseif (request()->path() === 'about') {
+        $page = Page::where('name', 'about')->first(); // Fix: Specify the correct page name
+    }
+
+
+    $view->with('page', $page);
+});
+
+    View::share('allMenus', Menu::with(['submenu'])->get());
+    View::share('contact', Contact::first());
+
+    // });
 }
 
 }

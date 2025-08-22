@@ -104,10 +104,10 @@
                             <!-- service as submenu -->
                             @if($submenu->services->count() > 0)
                                 @foreach($submenu->services as $service)
-                                <li><a href="{{ url('/') }}">{{$service->name}}</a></li>
+                                <li><a href="{{ url('service/'.$service->id) }}">{{$service->name}}</a></li>
                                 @endforeach
                             @endif
-                            <ul>
+                            </ul>
                             @endforeach
                         @endif      
                         </li>
@@ -224,7 +224,7 @@
                                 <!-- service as submenu -->
                                 @if($submenu->services->count() > 0)
                                     @foreach($submenu->services as $service)
-                                    <li><a href="{{ url('/') }}">{{$service->name}}</a></li>
+                                    <li><a href="{{  url('service/'.$service->id)  }}">{{$service->name}}</a></li>
                                     @endforeach
                                 @endif
                             </ul>
@@ -336,13 +336,13 @@
 
             @yield('content')
 
-                           <!--==============================
+                <!--==============================
                 Footer Area
                 ==============================-->
                 <footer class="footer-wrapper footer-layout2">
                     <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
                     <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="assets/img/icon/car-4.png" alt="shapes"></div>
+        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="{{ asset('assets/img/icon/car-4.png') }}" alt="shapes"></div>
         <div class="widget-area">
             <div class="container">
                 <div class="row justify-content-between">
@@ -352,7 +352,7 @@
                             <div class="vs-widget-about">
                                 <div class="about-logo">
                                     <a href="index.html">
-                                        <img src="assets/img/moriah-logo.png" alt="Moriah-care">
+                                        <img src="{{ asset('assets/img/moriah-logo.png') }}" alt="Moriah-care">
                                     </a>
                                 </div>
                                 <p class="about-text">Transforming Young Lives with Safe Homes, Healing Care, and a Future Full of Possibility.</p>
@@ -378,7 +378,7 @@
                     </div>
                     <!-- Footer Widget -->
                     <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
+                        {{-- <div class="widget footer-widget">
                             <h4 class="widget_title">News Feed</h4>
                             <div class="recent-post-wrap">
                                 <div class="recent-post">
@@ -400,16 +400,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- Footer Widget -->
                     <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Contact Us</h3>
                             <div class="vs-widget-contact">
-                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave, Brooklyn CA, United State</p>
-                                <p class="footer-info"><i class="fas fa-envelope"></i><a href="mailto:info@Moriah Careteam.com">info@Moriah Careteam.com</a></p>
-                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
+                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{ $contact->address }}</p>
+                                <p class="footer-info"><i class="fas fa-envelope"></i><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
+                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:{{$contact->mobile}}">{{$contact->mobile}}</a></p>
                             </div>
                         </div>
                     </div>

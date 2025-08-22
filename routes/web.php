@@ -13,9 +13,8 @@ use App\Http\Controllers\ContactController;
 // });
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('services',[ServiceController::class, 'index']);
 Route::get('service/{id}',[ServiceController::class, 'show'])->name('service.show');
-Route::get('team/{id}',[TeamDetailsController::class, 'show'])->name('team.show');
-Route::get('our-people',[OurPeopleController::class, 'index']);
 Route::get('about',[AboutController::class, 'index']);
 Route::get('contact',[ContactController::class, 'index']);
 Route::post('message',[ContactController::class, 'store']);

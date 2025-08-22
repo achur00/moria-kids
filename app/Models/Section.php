@@ -14,5 +14,9 @@ class Section extends Model
    {
        return $this->belongsTo(Page::class);
    }
+   public function service()
+   {
+       return $this->belongsTo(Service::class, 'id');
+   }
    
 }

@@ -2227,7 +2227,7 @@ a.text-white:hover {
 }
 
 [data-overlay=custom]:before {
-  background-color: #03252d;
+  background-color: #ff5a00;
 }
 
 [data-opacity="1"]:before {

@@ -3,29 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Section;
-use App\Models\Submenu;
-use App\Models\Menu;
+// use App\Models\Section;
+// use App\Models\Submenu;
+// use App\Models\Menu;
+use App\Models\Service;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        return view('service');
+        $services= Service::all();
+        return view('services', compact('services'));
     }
 
     public function show($id)
     {
-        $service=Submenu::with(['Sections'])->find($id);
-        // all service except the current service
-        $services=Menu::with(['Submenus'])->where('id', '=', 3)->first();
-        // dd($service);
-        return view('service_details')
-        ->with('serviceId', $service)
-        ->with('services',$services)
-        ;
-        // return view('service_details',compact('service','services'));
+        // $service = Service::with(['section'])->find($id);
+        $service = Service::with(['section'])->findOrFail($id);
 
+
+        return view('service_details', compact('service'));
+        
     }
     // public function create()
     // {
